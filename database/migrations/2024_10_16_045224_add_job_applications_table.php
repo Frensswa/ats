@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jobApplications', function (Blueprint $table) {
+        Schema::create('job_applications', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('applicantID')->unsigned();
             $table->bigInteger('jobOpeningID')->unsigned();
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unique(['applicantID', 'jobOpeningID']);
             $table->foreign('applicantID')->references('id')->on('applicants')
                 ->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('jobOpeningID')->references('id')->on('jobOpenings')
+            $table->foreign('jobOpeningID')->references('id')->on('job_openings')
                 ->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jobApplications');
+        Schema::dropIfExists('job_applications');
     }
 };

@@ -40,6 +40,17 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
+                                <label for="client_name" class="form-label mandatory">Client Name</label>
+                                <input type="text" class="form-control @error('client_name') is-invalid @enderror"
+                                    id="client_name" name="client_name" value="{{ old('client_name') }}"
+                                    placeholder="Client Name" autofocus required>
+                                @error('client_name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
                                 <div class="d-flex justify-content-between">
                                     <label class="form-label mandatory"
                                         for="password">Password</label> 

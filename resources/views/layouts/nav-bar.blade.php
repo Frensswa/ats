@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Clients</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('clients.index') }}">Clients</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Job Openings</a>
+            <a class="nav-link" href="{{ route('job-openings.index') }}">Job Openings</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

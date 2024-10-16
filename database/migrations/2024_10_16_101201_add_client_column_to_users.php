@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_openings', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->bigInteger('clientID')->unsigned();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->after('email', function (Blueprint $table) {
+                $table->bigInteger('clientID')->unsigned();
+            });
 
             $table->foreign('clientID')->references('id')->on('clients')->cascadeOnDelete();
         });
+        
     }
 
     /**
@@ -26,6 +26,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_openings');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('clientID');
+            $table->dropColumn('clientID');
+        });
     }
 };

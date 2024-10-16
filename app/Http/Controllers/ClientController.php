@@ -55,6 +55,6 @@ final class ClientController
 
         $client->save();
 
-        return redirect(action([self::class, 'index']));
+        return redirect(action([self::class, 'edit'], $client->id));
     }
 }

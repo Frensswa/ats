@@ -11,7 +11,7 @@ Job Openings
             <h5 class="card-title">Job Openings</h5>
 
             <div class="mb-2 text-end">
-                <a href="{{ route('jobOpenings.create') }}" class="btn btn-primary btn-sm float-right">Add client</a>
+                <a href="{{ route('job-openings.create') }}" class="btn btn-primary btn-sm float-right">Add job opening</a>
             </div>
 
             <table class="table table-striped">
@@ -25,9 +25,9 @@ Job Openings
                 <tbody>
                     @foreach($jobOpenings as $jobOpening)
                     <tr>
-                        <th scope="row">{{ $client->id }}</th>
-                        <td>{{ $client->name }}</td>
-                        <td><a href="{{ route('jobOpenings.edit', $client->id) }}" class="btn btn-info btn-sm">Edit</a></td>
+                        <th scope="row">{{ $jobOpening->id }}</th>
+                        <td>{{ $jobOpening->name }}</td>
+                        <td><a href="{{ route('job-openings.edit', $jobOpening->id) }}" class="btn btn-info btn-sm">Edit</a></td>
                         <td>
 
                         </td>
