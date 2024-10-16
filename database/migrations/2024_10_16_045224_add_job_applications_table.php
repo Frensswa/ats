@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('applicantID')->unsigned();
             $table->bigInteger('jobOpeningID')->unsigned();
+            $table->timestamps();
     
             $table->unique(['applicantID', 'jobOpeningID']);
             $table->foreign('applicantID')->references('id')->on('applicants')
