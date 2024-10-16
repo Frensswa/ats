@@ -19,11 +19,11 @@
                             action="{{ route('register') }}" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="username" class="form-label mandatory">Username</label>
-                                <input type="text" class="form-control @error('username') is-invalid @enderror"
-                                    id="username" name="username" value="{{ old('username') }}"
+                                <label for="name" class="form-label mandatory">Username</label>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    id="name" name="name" value="{{ old('name') }}"
                                     placeholder="Username" autofocus required>
-                                @error('username')
+                                @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -49,7 +49,7 @@
                                     <input type="password" id="password" class="form-control" name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                         aria-describedby="password" required />
-                                    @error('username')
+                                    @error('password')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

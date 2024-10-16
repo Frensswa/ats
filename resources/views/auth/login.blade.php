@@ -19,10 +19,10 @@
                             action="{{ action([AuthenticatedSessionController::class, 'create']) }}" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="username" class="form-label mandatory">Username</label>
-                                <input type="text" class="form-control @error('username') is-invalid @enderror"
-                                    id="username" name="username" value="{{ old('username') }}"
-                                    placeholder="Username" autofocus required>
+                                <label for="name" class="form-label mandatory">Username</label>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    id="name" name="name" value="{{ old('name') }}"
+                                    placeholder="name" autofocus required>
                             </div>
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between">
