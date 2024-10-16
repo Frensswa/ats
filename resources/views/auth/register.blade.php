@@ -15,8 +15,7 @@
     <div class="container py-5">
         <div class="w-50 center border rounded px-3 py-3 mx-auto">
         <h1>Register</h1>
-        <form id="formAuthentication"
-                            action="{{ route('register') }}" method="POST">
+        <form action="{{ route('register') }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label mandatory">Username</label>

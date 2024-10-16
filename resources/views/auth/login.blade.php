@@ -15,14 +15,18 @@
     <div class="container py-5">
         <div class="w-50 center border rounded px-3 py-3 mx-auto">
         <h1>Login</h1>
-        <form id="formAuthentication"
-                            action="{{ action([AuthenticatedSessionController::class, 'create']) }}" method="POST">
+        <form action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="name" class="form-label mandatory">Username</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    id="name" name="name" value="{{ old('name') }}"
-                                    placeholder="name" autofocus required>
+                                <label for="email" class="form-label mandatory">Email</label>
+                                <input type="text" class="form-control @error('email') is-invalid @enderror"
+                                    id="email" name="email" value="{{ old('email') }}"
+                                    placeholder="email" autofocus required>
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between">
@@ -36,6 +40,11 @@
                                     <input type="password" id="password" class="form-control" name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                         aria-describedby="password" required />
+                                    @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 </div>
                             </div>
 
